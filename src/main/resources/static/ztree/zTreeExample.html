@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--树组件start -->
+    <script type="text/javascript" src="/libs/js/tree/ztree/ztree.js"></script>
+    <link href="/libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+    <!--树组件end -->
+</head>
+<body>
+
+<div position="left">
+    <div>
+        <input id="addTreeNode" name="addPanel" type="button" value="增加树节点" class="" onclick="hoverTree.updateTreeNode('addTreeNode','');" />
+    </div>
+    <div>
+        <input id="selectTreeNode" name="selectTreeNode" type="text" class="" placeholder="按节点名称模糊搜索"/>
+        <input id="selectBtn" name="selectBtn" type="button" class="" value="查询" onClick="hoverTree.selectTreeNodeByNameLike()"/>
+    </div>
+    <div>
+        <ul id="ztreeExample" name="ztreeExample" class="ztree"></ul>
+    </div>
+</div>
+<!--定义datagrid的元素-->
+<div position="center">
+    <div style="width: 100%;height: 100%;">
+        <iframe style="width: 100%;height:100%;" frameBorder=0 allowTransparency="true" name="iframeGrid" id="iframeGrid" ></iframe>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="/ztree/zTreeExample.js"></script>
+</html>
