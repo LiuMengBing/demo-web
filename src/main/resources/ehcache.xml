@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+    <!-- diskStore为缓存路径，ehcache分为内存和磁盘两级，此属性定义磁盘的缓存位置 -->
+    <diskStore path="java.io.tmpdir/Tmp_EhCache" />
+
+    <!-- 默认缓存策略，当ehcache找不到定义的缓存时，则使用这个缓存策略。只能定义一个。 -->
+    <defaultCache eternal="false" maxElementsInMemory="1000" overflowToDisk="false" diskPersistent="false"
+                  timeToIdleSeconds="0" timeToLiveSeconds="600" memoryStoreEvictionPolicy="LRU" />
+
+    <!--最新商品缓存1天-->
+    <cache name="goods" eternal="false" maxElementsInMemory="100" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="0" timeToLiveSeconds="3600" memoryStoreEvictionPolicy="LRU" />
+
+    <!--商品类别缓存一天-->
+    <cache name="goodsCategory" eternal="false" maxElementsInMemory="100" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="0" timeToLiveSeconds="86400" memoryStoreEvictionPolicy="LRU" />
+
+</ehcache>
