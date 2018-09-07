@@ -140,6 +140,12 @@ var ztreeHandler = {
     //用于树节点搜索，将查出的树节点高亮显示
     getFontCss:function(treeId, node){
         return (!!node.highlight) ? {color:"#A60000", "font-weight":"bold"} : {color:"#333", "font-weight":"normal"};
+    },
+
+    zTreeOnClick:function (eventjs,treeId,treeNode,clickFlag){
+        if(treeNode.level==1){
+            //给第一级子节点绑定鼠标点击事件
+        }
     }
 }
 
@@ -166,7 +172,7 @@ var setting = {
         }
     },
     callback: {
-        /** onClick: zTreeOnClick, //单击事件
+        /** onClick: hoverTree.zTreeOnClick, //此处可以在setting的时候给zTree节点绑定鼠标点击事件，在事件内部定义点击操作
          onRemove: onRemove, //移除事件
          onRename: onRename //修改事件**/
     }
